@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniDev Cloud</title>
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tema de la barra de estado -->
+  <meta name="theme-color" content="#4a90e2">
+
+  <!-- Ícono de la app -->
+  <link rel="apple-touch-icon" href="Background (4).png">
+
+  <!-- CSS existentes -->
+  <link rel="stylesheet" href="10.7_donationPanel.css">
+
+</head>
+<body>
+  <header>
+    <h1>UniDev Cloud</h1>
+    <p>Módulo de Donaciones y Control de Acceso</p>
+  </header>
+
+  <main>
+    <div id="donation-dashboard"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 UniDev Cloud</p>
+  </footer>
+
+  <!-- JS existentes -->
+  <script src="10.8_donationDashboard.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registrado:', reg))
+          .catch(err => console.log('Error registrando Service Worker:', err));
+      });
+    }
+  </script>
+</body>
+</html>
